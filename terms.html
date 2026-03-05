@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Hydro</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .content-page {
+            padding-top: 10rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-page h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-page p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-page h2 {
+            font-size: 1.8rem;
+            margin: 3rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition-fast);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="/" class="logo">Hydro</a>
+            <div class="nav-cta">
+                <a href="/" class="btn btn-secondary btn-sm">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Back
+        </a>
+        <h1 class="text-gradient">Terms of Service</h1>
+        <p>By using Hydro, you're agreeing to a few basic things. No "gotchas," just how we stay on the same
+            page.</p>
+
+        <h2>1. Usage</h2>
+        <p>Hydro is designed to help you track habits. Use it, enjoy it, but don't try to break it. I'm
+            building this independently and I'd appreciate you keeping it clean.</p>
+
+        <h2>2. Data Accuracy</h2>
+        <p>AI meal analysis is smart, but it's not a lab test. Use the macro data as a guide. If you have specific
+            medical needs, always double-check your intake.</p>
+
+        <h2>3. Accountability</h2>
+        <p>I built this to work, but I'm not responsible for missed reminders or technical glitches. I'll do my best to
+            fix bugs quickly, but please use the app as a tool, not a life-support system.</p>
+
+        <h2>4. Support the Build</h2>
+        <p>Donations are voluntary and non-refundable. They go directly towards keeping the servers running and my
+            caffeine levels high.</p>
+
+        <p style="margin-top: 5rem; opacity: 0.5;">Last updated: February 2026</p>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hydro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

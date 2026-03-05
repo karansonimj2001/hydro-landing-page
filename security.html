@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security | Hydro</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .content-page {
+            padding-top: 10rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-page h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-page p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-page h2 {
+            font-size: 1.8rem;
+            margin: 3rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition-fast);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .security-item {
+            background: var(--surface-card);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .security-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="/" class="logo">Hydro</a>
+            <div class="nav-cta">
+                <a href="/" class="btn btn-secondary btn-sm">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Back
+        </a>
+        <h1 class="text-gradient">Security First</h1>
+        <p>I build for students and hustlers, which means I build for people who value their privacy. Here's how I keep
+            Hydro secure.</p>
+
+        <div class="security-grid">
+            <div class="security-item reveal">
+                <h3>No Photo Storage</h3>
+                <p>Your meal photos are processed by the AI and immediately discarded. I don't keep them, I don't see
+                    them.</p>
+            </div>
+            <div class="security-item reveal">
+                <h3>Local Logic</h3>
+                <p>Adaptive reminder logic lives on your device. Your behavior patterns stay yours.</p>
+            </div>
+            <div class="security-item reveal">
+                <h3>Minimial Collection</h3>
+                <p>I only collect what's necessary to make the app work. No trackers, no third-party bloat.</p>
+            </div>
+            <div class="security-item reveal">
+                <h3>Encrypted Sync</h3>
+                <p>If you choose to sync data across devices, it's encrypted from end to end. Period.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 5rem; text-align: center; color: var(--text-dim);">Have security questions? <br><a
+                href="/contact.html" style="color: var(--accent);">Get in touch.</a></p>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hydro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

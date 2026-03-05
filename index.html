@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro | Elite Reminders for High Performers</title>
+    <meta name="description"
+        content="AI-powered hydration reminders + instant food analysis. Built for students & hustlers who don't have time to guess.">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hydro | Elite Reminders">
+    <meta property="og:description"
+        content="AI-powered hydration + instant food analysis. Lightweight. Smart. No nonsense.">
+    <meta property="og:image" content="/mockup.png">
+
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+    <!-- Razorpay Checkout -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/src/main.js"></script>
+</head>
+
+<body>
+    <div id="scroll-tracker"></div>
+    <div class="bg-glow"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="/logo-transparent.png" alt="Hydro Logo" class="logo-img">
+                <span>Hydro</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#support">Support</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#download" class="btn btn-primary btn-sm">Download Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="text-reveal">You Forget to Drink Water.<br><span class="text-gradient">I Built Something That
+                        Doesn’t.</span></h1>
+                <p class="section-subtitle reveal">AI-powered hydration reminders + instant food analysis.
+                    <br>Lightweight.
+                    Smart. No nonsense.
+                </p>
+                <div class="hero-highlights reveal">
+                    <div class="highlight-item">
+                        <span class="icon">⚡</span>
+                        <span>7MB – zero bloat</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🤖</span>
+                        <span>2 Free AI food scans daily</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">💧</span>
+                        <span>Adaptive notifications</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🎓</span>
+                        <span>Student & Hustler first</span>
+                    </div>
+                </div>
+                <div class="hero-actions reveal">
+                    <a href="#download" class="btn btn-primary btn-lg">Download App – Free</a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <div class="image-glow"></div>
+
+                <!-- Home Screen Callouts -->
+                <div class="callout-group active" id="callouts-home">
+                    <div class="callout left callout-streak"><i>🔥</i> Streak System</div>
+                    <div class="callout right callout-progress"><i>💧</i> 17% Hydrated</div>
+                    <div class="callout left callout-ai"><i>🤖</i> AI Meal Scan</div>
+                    <div class="callout right callout-tips"><i>💡</i> Smart Insights</div>
+                </div>
+
+                <!-- Levels Screen Callouts -->
+                <div class="callout-group" id="callouts-levels">
+                    <div class="callout left callout-streak"><i>🥈</i> Silver Tier</div>
+                    <div class="callout right callout-progress"><i>📈</i> XP Progression</div>
+                    <div class="callout left callout-ai"><i>🏆</i> Consistency</div>
+                    <div class="callout right callout-tips"><i>✨</i> Rewards</div>
+                </div>
+
+                <!-- Stats Screen Callouts -->
+                <div class="callout-group" id="callouts-stats">
+                    <div class="callout left callout-streak"><i>📊</i> Weekly Trends</div>
+                    <div class="callout right callout-progress"><i>📈</i> Performance</div>
+                    <div class="callout left callout-ai"><i>📉</i> Momentum</div>
+                    <div class="callout right callout-tips"><i>✨</i> History</div>
+                </div>
+
+                <!-- Settings Screen Callouts -->
+                <div class="callout-group" id="callouts-settings">
+                    <div class="callout left callout-streak"><i>⚙️</i> Preferences</div>
+                    <div class="callout right callout-progress"><i>🔔</i> Reminders</div>
+                    <div class="callout left callout-ai"><i>🛌</i> Bedtime Mode</div>
+                    <div class="callout right callout-tips"><i>👤</i> Profile</div>
+                </div>
+
+                <!-- Log Screen Callouts -->
+                <div class="callout-group" id="callouts-log">
+                    <div class="callout left callout-streak"><i>💧</i> Quick Log</div>
+                    <div class="callout right callout-progress"><i>🍼</i> Container</div>
+                    <div class="callout left callout-ai"><i>🥃</i> Drink Type</div>
+                    <div class="callout right callout-tips"><i>✨</i> XP Earned</div>
+                </div>
+
+                <div class="phone-mockup">
+                    <!-- Screen 1: Home -->
+                    <div class="screen active" id="screen-home" style="background-image: url('/home-screen.png');">
+                    </div>
+
+                    <!-- Screen 2: Levels -->
+                    <div class="screen" id="screen-levels" style="background-image: url('/levels-screen.png');"></div>
+
+                    <!-- Screen 3: Stats -->
+                    <div class="screen" id="screen-stats" style="background-image: url('/stats-screen.png');"></div>
+
+                    <!-- Screen 4: Settings -->
+                    <div class="screen" id="screen-settings" style="background-image: url('/settings-screen.png');">
+                    </div>
+
+                    <!-- Screen 5: Log -->
+                    <div class="screen" id="screen-log" style="background-image: url('/log-screen.png');"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="problem-section">
+            <div class="section-container">
+                <h2 class="reveal">Stop Guessing.</h2>
+                <p class="section-subtitle reveal">Most people fail because they lack consistency and data. We solve
+                    both.</p>
+                <div class="problem-grid">
+                    <div class="problem-item reveal">
+                        <p>You forget to drink water.</p>
+                    </div>
+                    <div class="problem-item reveal">
+                        <p>You don’t know if your meal has enough protein.</p>
+                    </div>
+                    <div class="problem-item reveal">
+                        <p>You think you’re healthy… <span class="text-dim">but you’re guessing.</span></p>
+                    </div>
+                </div>
+                <h3 class="reveal elite-text">This app fixes that.</h3>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="section-header reveal">
+                <span class="badge">Performance</span>
+                <h2>Feature Journey</h2>
+                <p class="section-subtitle">Every detail engineered for your high-performance lifestyle.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+
+                <div class="timeline-item reveal left blue" data-index="1">
+                    <div class="timeline-dot"></div>
+                    <div class="feature-card">
+                        <span class="step-tag">Step 01</span>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3-4-4-6.5c-1 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+                            </svg>
+                        </div>
+                        <h3>Smart Hydration Engine</h3>
+                        <p>Adaptive reminders based on your behavior. Miss a few hours? It adjusts.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal right purple" data-index="2">
+                    <div class="timeline-dot"></div>
+                    <div class="feature-card">
+                        <span class="step-tag">Step 02</span>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <path d="M9 3v18" />
+                                <path d="m14 7 3 3-3 3" />
+                            </svg>
+                        </div>
+                        <h3>AI Food Scanner</h3>
+                        <p>Take a photo. Get calories, protein, carbs instantly. No manual logging.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal left orange" data-index="3">
+                    <div class="timeline-dot"></div>
+                    <div class="feature-card">
+                        <span class="step-tag">Step 03</span>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20V10" />
+                                <path d="M18 20V4" />
+                                <path d="M6 20v-4" />
+                            </svg>
+                        </div>
+                        <h3>Consistency Score</h3>
+                        <p>Tracks hydration discipline and daily habit strength.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal right yellow" data-index="4">
+                    <div class="timeline-dot"></div>
+                    <div class="feature-card">
+                        <span class="step-tag">Step 04</span>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3>Ultra Lightweight</h3>
+                        <p>Only ~7MB. Fast, minimal and storage friendly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="how-it-works" class="demo-section">
+            <div class="section-header reveal">
+                <span class="badge">Guide</span>
+                <h2>Three Steps to Elite Performance</h2>
+                <p class="section-subtitle">No complexity. No friction. Just results.</p>
+            </div>
+            <div class="demo-container reveal">
+                <div class="demo-visual">
+                    <div class="scanner-frame">
+                        <img src="/scanner.png" alt="AI Scan Demo">
+                        <div class="scan-overlay">
+                            <div class="scan-line"></div>
+                            <div class="scan-results">
+                                <div class="stat"><span>Cal:</span> 450</div>
+                                <div class="stat"><span>Pro:</span> 32g</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-text">
+                    <div class="step reveal" data-step="1">
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                    <circle cx="12" cy="13" r="4" />
+                                </svg>
+                            </div>
+                            <h3>Scan Your Fuel</h3>
+                            <p>One tap to analyze any meal. Instant macro data.</p>
+                        </div>
+                    </div>
+                    <div class="step reveal" data-step="2">
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 20v-6M6 20V10M18 20V4" />
+                                </svg>
+                            </div>
+                            <h3>Track Consistency</h3>
+                            <p>See your liquid progress grow in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="step reveal" data-step="3">
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                            <h3>Achieve Mastery</h3>
+                            <p>Build habits that stick. No more forgetting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="social-proof">
+            <div class="proof-card reveal">
+                <div class="stars">★★★★★</div>
+                <p class="quote">“Average hydration consistency improved by 40%.”</p>
+                <div class="meta">Built & tested with real students.</div>
+            </div>
+        </section>
+
+        <!-- Donation Section -->
+        <section id="support" class="donation-section">
+            <div class="glass-card donation-card reveal">
+                <div class="lambo-showcase reveal">
+                    <img src="/lambo.png" alt="My Dream Car - Yellow Lamborghini">
+                    <div class="lambo-badge">Dream Goal</div>
+                </div>
+
+                <div class="donation-content">
+                    <h2 class="reveal">Liked this Lambo?</h2>
+                    <p class="reveal">I like it too. It’s my ultimate dream car. <br>I’m building Hydro independently to
+                        eventually earn my way to it.</p>
+
+                    <div class="dream-goal-tracker reveal">
+                        <div class="tracker-header">
+                            <span>Lambo Goal Progress</span>
+                            <span class="remaining">₹4,99,50,000 remaining</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" style="width: 0.1%;"></div>
+                        </div>
+                        <p class="goal-text">Help me fuel the journey from code to carbon fiber.</p>
+                    </div>
+
+                    <div class="donation-actions reveal">
+                        <div class="amount-input-wrap">
+                            <span class="rupee-symbol">₹</span>
+                            <input type="number" id="donationAmountTop" class="amount-input" placeholder="Amount"
+                                min="1" value="150">
+                        </div>
+                        <button type="button" id="donateBtnDonation" class="btn btn-primary btn-lg">Support the Dream
+                            ☕</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="download" class="final-cta">
+            <h2 class="reveal">Stop Guessing. <br><span class="text-gradient">Start Tracking.</span></h2>
+            <p class="reveal">Every coffee fuels late-night coding sessions to make this app even better for you. No
+                pressure, just appreciation.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="/logo-transparent.png" alt="Logo" class="logo-img-sm">
+                    <span>Hydro</span>
+                </div>
+                <p>Built by a founder who kept forgetting to drink water.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-group">
+                    <h4>Product</h4>
+                    <a href="/privacy.html">Privacy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/security.html">Security</a>
+                </div>
+                <div class="footer-group">
+                    <h4>Community</h4>
+                    <a href="/contact.html">Contact</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hydro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
